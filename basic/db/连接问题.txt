@@ -1,0 +1,11 @@
+C:\Windows\System32\drivers\etc
+hosts文件修改；
+
+# localhost name resolution is handled within DNS itself.
+	127.0.0.1       localhost
+#	::1             localhost
+
+========上面的取消中间的#号
+# localhost name resolution is handled within DNS itself.
+	127.0.0.1       localhost
+#	::1             localhost

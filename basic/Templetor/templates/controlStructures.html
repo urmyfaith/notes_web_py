@@ -1,0 +1,55 @@
+$def with (name)
+
+$# if语句           这一行是注释
+$if name != "":
+	Hello, your \
+	name  is \
+	$name!
+$else:
+	Hello Worlllllld.
+
+$# for语句
+$for i in range(10): 
+   <br> I like $i
+<hr>
+<table>
+$for char in ["a", "b", "c", "d"]:
+    <tr class="$loop.parity">
+        <td>$loop.index</td>
+        <td>$char</td>
+    </tr>
+</table>
+
+
+$# 字典数据的输出
+$def tr(values):
+    <tr>
+    $for v in values:
+        <td>$v</td>
+    </tr>
+
+$def table(rows):
+    <table>
+    $for row in rows:
+        $:row
+    </table>
+
+$ data = [['a', 'b', 'c'], [1, 2, 3], [2, 4, 6], [3, 6, 9] ]
+$:table([tr(d) for d in data])
+
+
+$# python 代码块的书写
+
+$code:
+    x = "you can write any python code here"
+    y = x.title()
+    z = len(x + y)
+
+    def limit(s, width=20):
+        """limits a string to the given width"""
+        if len(s) >= width:
+            return s[:width] + "..."
+        else:
+            return s
+
+$limit(x)  $# 调用代码块。
